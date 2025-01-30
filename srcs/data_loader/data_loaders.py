@@ -6,6 +6,15 @@ import numpy as np
 import torch
 from torch.utils.data import DataLoader, Dataset
 
+from torchvision import transforms
+
+#аугментации
+transform = transforms.Compose([
+    transforms.ColorJitter(brightness=0.15, contrast=0.15,
+                            saturation=0.15, hue=(-0.1, 0.1)),
+                            transforms.RandomRotation(15),
+                            transforms.Resize((200, 200)),
+                            transforms.ToTensor()])
 
 class SignDataset(Dataset):
     def __init__(self, paths: List[Path], transform=None):
@@ -21,9 +30,13 @@ class SignDataset(Dataset):
     def __getitem__(self, idx):
         image = cv2.imread(str(self.paths[idx]))
         label = str(self.paths[idx]).split('/')[-2]
-        image = cv2.resize(image, (200, 200))
-        image = np.transpose(image, (2, 0, 1))
-
+        # image = cv2.resize(image, (200, 200))
+        # image = np.transpose(image, (2, 0, 1))
+        if self.transform is not None:
+            image = self.transform(image)
+        else:
+            image = cv2.resize(image, (200, 200))
+            image = np.transpose(image, (2, 0, 1))
         return torch.tensor(image).float(), torch.tensor(self.one_hot_encoding[label])
 
 
