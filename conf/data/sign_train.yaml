@@ -1,8 +1,8 @@
 # @package _global_
 data_loader:
   _target_: srcs.data_loader.data_loaders.get_sign_dataloader
-  path_train: data/sign_language_dataset_train/
-  path_val: data/sign_language_dataset_val/
+  path_train: /home/julia/Desktop/code/overfitted/SHIFT-intensive-Overfitted-team/data/train
+  path_val: /home/julia/Desktop/code/overfitted/SHIFT-intensive-Overfitted-team/data/validation
   batch_size: ${batch_size}
   shuffle: true
   num_workers: ${n_cpu}

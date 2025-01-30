@@ -1,0 +1,4 @@
+[2025-01-30 20:20:42,044][Calculate calibration and classification metrics][INFO] - Loading checkpoint: ckpt/model_best.pth ...
+[2025-01-30 20:21:31,042][Calculate calibration and classification metrics][INFO] - ECE before calibrating: 6.672718154732138e-05
+[2025-01-30 20:21:31,042][Calculate calibration and classification metrics][INFO] - ECE after calibrating: 6.672718154732138e-05
+[2025-01-30 20:21:31,042][Calculate calibration and classification metrics][INFO] - Temperature: 1.0

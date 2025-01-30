@@ -1,0 +1,578 @@
+[2025-01-30 18:01:11,462][train][INFO] - MobileNetV3(
+  (features): Sequential(
+    (0): Conv2dNormActivation(
+      (0): Conv2d(3, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), bias=False)
+      (1): BatchNorm2d(16, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      (2): Hardswish()
+    )
+    (1): InvertedResidual(
+      (block): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(16, 16, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=16, bias=False)
+          (1): BatchNorm2d(16, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+        )
+        (1): SqueezeExcitation(
+          (avgpool): AdaptiveAvgPool2d(output_size=1)
+          (fc1): Conv2d(16, 8, kernel_size=(1, 1), stride=(1, 1))
+          (fc2): Conv2d(8, 16, kernel_size=(1, 1), stride=(1, 1))
+          (activation): ReLU()
+          (scale_activation): Hardsigmoid()
+        )
+        (2): Conv2dNormActivation(
+          (0): Conv2d(16, 16, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(16, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (2): InvertedResidual(
+      (block): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(16, 72, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(72, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(72, 72, kernel_size=(3, 3), stride=(2, 2), padding=(1, 1), groups=72, bias=False)
+          (1): BatchNorm2d(72, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+        )
+        (2): Conv2dNormActivation(
+          (0): Conv2d(72, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(24, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (3): InvertedResidual(
+      (block): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(24, 88, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(88, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(88, 88, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=88, bias=False)
+          (1): BatchNorm2d(88, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): ReLU(inplace=True)
+        )
+        (2): Conv2dNormActivation(
+          (0): Conv2d(88, 24, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(24, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (4): InvertedResidual(
+      (block): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(24, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(96, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(96, 96, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=96, bias=False)
+          (1): BatchNorm2d(96, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (2): SqueezeExcitation(
+          (avgpool): AdaptiveAvgPool2d(output_size=1)
+          (fc1): Conv2d(96, 24, kernel_size=(1, 1), stride=(1, 1))
+          (fc2): Conv2d(24, 96, kernel_size=(1, 1), stride=(1, 1))
+          (activation): ReLU()
+          (scale_activation): Hardsigmoid()
+        )
+        (3): Conv2dNormActivation(
+          (0): Conv2d(96, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(40, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (5): InvertedResidual(
+      (block): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(40, 240, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(240, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(240, 240, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=240, bias=False)
+          (1): BatchNorm2d(240, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (2): SqueezeExcitation(
+          (avgpool): AdaptiveAvgPool2d(output_size=1)
+          (fc1): Conv2d(240, 64, kernel_size=(1, 1), stride=(1, 1))
+          (fc2): Conv2d(64, 240, kernel_size=(1, 1), stride=(1, 1))
+          (activation): ReLU()
+          (scale_activation): Hardsigmoid()
+        )
+        (3): Conv2dNormActivation(
+          (0): Conv2d(240, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(40, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (6): InvertedResidual(
+      (block): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(40, 240, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(240, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(240, 240, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=240, bias=False)
+          (1): BatchNorm2d(240, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (2): SqueezeExcitation(
+          (avgpool): AdaptiveAvgPool2d(output_size=1)
+          (fc1): Conv2d(240, 64, kernel_size=(1, 1), stride=(1, 1))
+          (fc2): Conv2d(64, 240, kernel_size=(1, 1), stride=(1, 1))
+          (activation): ReLU()
+          (scale_activation): Hardsigmoid()
+        )
+        (3): Conv2dNormActivation(
+          (0): Conv2d(240, 40, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(40, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (7): InvertedResidual(
+      (block): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(40, 120, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(120, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(120, 120, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=120, bias=False)
+          (1): BatchNorm2d(120, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (2): SqueezeExcitation(
+          (avgpool): AdaptiveAvgPool2d(output_size=1)
+          (fc1): Conv2d(120, 32, kernel_size=(1, 1), stride=(1, 1))
+          (fc2): Conv2d(32, 120, kernel_size=(1, 1), stride=(1, 1))
+          (activation): ReLU()
+          (scale_activation): Hardsigmoid()
+        )
+        (3): Conv2dNormActivation(
+          (0): Conv2d(120, 48, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(48, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (8): InvertedResidual(
+      (block): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(48, 144, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(144, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(144, 144, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=144, bias=False)
+          (1): BatchNorm2d(144, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (2): SqueezeExcitation(
+          (avgpool): AdaptiveAvgPool2d(output_size=1)
+          (fc1): Conv2d(144, 40, kernel_size=(1, 1), stride=(1, 1))
+          (fc2): Conv2d(40, 144, kernel_size=(1, 1), stride=(1, 1))
+          (activation): ReLU()
+          (scale_activation): Hardsigmoid()
+        )
+        (3): Conv2dNormActivation(
+          (0): Conv2d(144, 48, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(48, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (9): InvertedResidual(
+      (block): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(48, 288, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(288, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(288, 288, kernel_size=(5, 5), stride=(2, 2), padding=(2, 2), groups=288, bias=False)
+          (1): BatchNorm2d(288, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (2): SqueezeExcitation(
+          (avgpool): AdaptiveAvgPool2d(output_size=1)
+          (fc1): Conv2d(288, 72, kernel_size=(1, 1), stride=(1, 1))
+          (fc2): Conv2d(72, 288, kernel_size=(1, 1), stride=(1, 1))
+          (activation): ReLU()
+          (scale_activation): Hardsigmoid()
+        )
+        (3): Conv2dNormActivation(
+          (0): Conv2d(288, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(96, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (10): InvertedResidual(
+      (block): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(576, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(576, 576, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=576, bias=False)
+          (1): BatchNorm2d(576, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (2): SqueezeExcitation(
+          (avgpool): AdaptiveAvgPool2d(output_size=1)
+          (fc1): Conv2d(576, 144, kernel_size=(1, 1), stride=(1, 1))
+          (fc2): Conv2d(144, 576, kernel_size=(1, 1), stride=(1, 1))
+          (activation): ReLU()
+          (scale_activation): Hardsigmoid()
+        )
+        (3): Conv2dNormActivation(
+          (0): Conv2d(576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(96, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (11): InvertedResidual(
+      (block): Sequential(
+        (0): Conv2dNormActivation(
+          (0): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(576, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (1): Conv2dNormActivation(
+          (0): Conv2d(576, 576, kernel_size=(5, 5), stride=(1, 1), padding=(2, 2), groups=576, bias=False)
+          (1): BatchNorm2d(576, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+          (2): Hardswish()
+        )
+        (2): SqueezeExcitation(
+          (avgpool): AdaptiveAvgPool2d(output_size=1)
+          (fc1): Conv2d(576, 144, kernel_size=(1, 1), stride=(1, 1))
+          (fc2): Conv2d(144, 576, kernel_size=(1, 1), stride=(1, 1))
+          (activation): ReLU()
+          (scale_activation): Hardsigmoid()
+        )
+        (3): Conv2dNormActivation(
+          (0): Conv2d(576, 96, kernel_size=(1, 1), stride=(1, 1), bias=False)
+          (1): BatchNorm2d(96, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+        )
+      )
+    )
+    (12): Conv2dNormActivation(
+      (0): Conv2d(96, 576, kernel_size=(1, 1), stride=(1, 1), bias=False)
+      (1): BatchNorm2d(576, eps=0.001, momentum=0.01, affine=True, track_running_stats=True)
+      (2): Hardswish()
+    )
+  )
+  (avgpool): AdaptiveAvgPool2d(output_size=1)
+  (classifier): Sequential(
+    (0): Linear(in_features=576, out_features=1024, bias=True)
+    (1): Hardswish()
+    (2): Dropout(p=0.2, inplace=True)
+    (3): Linear(in_features=1024, out_features=29, bias=True)
+  )
+)
+[2025-01-30 18:01:11,465][train][INFO] - Trainable parameters: 1547581
+[2025-01-30 18:01:13,243][trainer][INFO] - Train Epoch: 1 [0/60900 (0%)] Loss: 3.392917
+[2025-01-30 18:01:54,515][trainer][INFO] - Train Epoch: 1 [3200/60900 (5%)] Loss: 0.122823
+[2025-01-30 18:02:33,186][trainer][INFO] - Train Epoch: 1 [6400/60900 (11%)] Loss: 0.093484
+[2025-01-30 18:03:12,371][trainer][INFO] - Train Epoch: 1 [9600/60900 (16%)] Loss: 0.220150
+[2025-01-30 18:03:51,464][trainer][INFO] - Train Epoch: 1 [12800/60900 (21%)] Loss: 0.110655
+[2025-01-30 18:04:30,185][trainer][INFO] - Train Epoch: 1 [16000/60900 (26%)] Loss: 0.171660
+[2025-01-30 18:05:08,976][trainer][INFO] - Train Epoch: 1 [19200/60900 (32%)] Loss: 0.009258
+[2025-01-30 18:05:47,656][trainer][INFO] - Train Epoch: 1 [22400/60900 (37%)] Loss: 0.008493
+[2025-01-30 18:06:26,693][trainer][INFO] - Train Epoch: 1 [25600/60900 (42%)] Loss: 0.079213
+[2025-01-30 18:07:05,625][trainer][INFO] - Train Epoch: 1 [28800/60900 (47%)] Loss: 0.341339
+[2025-01-30 18:07:45,079][trainer][INFO] - Train Epoch: 1 [32000/60900 (53%)] Loss: 0.012800
+[2025-01-30 18:08:24,107][trainer][INFO] - Train Epoch: 1 [35200/60900 (58%)] Loss: 0.013258
+[2025-01-30 18:09:03,190][trainer][INFO] - Train Epoch: 1 [38400/60900 (63%)] Loss: 0.004531
+[2025-01-30 18:09:42,039][trainer][INFO] - Train Epoch: 1 [41600/60900 (68%)] Loss: 0.000906
+[2025-01-30 18:10:21,052][trainer][INFO] - Train Epoch: 1 [44800/60900 (74%)] Loss: 0.000163
+[2025-01-30 18:11:00,162][trainer][INFO] - Train Epoch: 1 [48000/60900 (79%)] Loss: 0.061954
+[2025-01-30 18:11:38,876][trainer][INFO] - Train Epoch: 1 [51200/60900 (84%)] Loss: 0.010831
+[2025-01-30 18:12:17,738][trainer][INFO] - Train Epoch: 1 [54400/60900 (89%)] Loss: 0.028260
+[2025-01-30 18:12:56,648][trainer][INFO] - Train Epoch: 1 [57600/60900 (95%)] Loss: 0.000130
+[2025-01-30 18:13:35,276][trainer][INFO] - Train Epoch: 1 [60800/60900 (100%)] Loss: 0.001569
+[2025-01-30 18:14:22,263][trainer][INFO] - ===========================================================================================================
+[2025-01-30 18:14:22,270][trainer][INFO] - 
+             loss            accuracy           precision              recall                  f1          
+            train     valid     train     valid     train     valid     train     valid     train     valid
+epoch-1  0.093443  0.065638  0.929688  0.980316  0.957812  0.992448  0.929688  0.980316  0.934534  0.980138
+[2025-01-30 18:14:22,270][trainer][INFO] - ===========================================================================================================
+[2025-01-30 18:14:22,288][trainer][INFO] - Model checkpoint saved at: 
+    ./ckpt/checkpoint-epoch1.pth
+[2025-01-30 18:14:22,299][trainer][INFO] - Renewing best checkpoint: 
+    .../ckpt/model_best.pth
+[2025-01-30 18:14:22,303][trainer][INFO] - ***********************************************************************************************************
+[2025-01-30 18:14:23,156][trainer][INFO] - Train Epoch: 2 [0/60900 (0%)] Loss: 0.000901
+[2025-01-30 18:15:02,329][trainer][INFO] - Train Epoch: 2 [3200/60900 (5%)] Loss: 0.001524
+[2025-01-30 18:15:40,450][trainer][INFO] - Train Epoch: 2 [6400/60900 (11%)] Loss: 0.007473
+[2025-01-30 18:16:19,056][trainer][INFO] - Train Epoch: 2 [9600/60900 (16%)] Loss: 0.015622
+[2025-01-30 18:16:58,028][trainer][INFO] - Train Epoch: 2 [12800/60900 (21%)] Loss: 0.000708
+[2025-01-30 18:17:36,771][trainer][INFO] - Train Epoch: 2 [16000/60900 (26%)] Loss: 0.006745
+[2025-01-30 18:18:15,710][trainer][INFO] - Train Epoch: 2 [19200/60900 (32%)] Loss: 0.004562
+[2025-01-30 18:18:54,673][trainer][INFO] - Train Epoch: 2 [22400/60900 (37%)] Loss: 0.001888
+[2025-01-30 18:19:33,080][trainer][INFO] - Train Epoch: 2 [25600/60900 (42%)] Loss: 0.000224
+[2025-01-30 18:20:11,778][trainer][INFO] - Train Epoch: 2 [28800/60900 (47%)] Loss: 0.001262
+[2025-01-30 18:20:50,433][trainer][INFO] - Train Epoch: 2 [32000/60900 (53%)] Loss: 0.025991
+[2025-01-30 18:21:28,902][trainer][INFO] - Train Epoch: 2 [35200/60900 (58%)] Loss: 0.001564
+[2025-01-30 18:22:07,886][trainer][INFO] - Train Epoch: 2 [38400/60900 (63%)] Loss: 0.000190
+[2025-01-30 18:22:46,578][trainer][INFO] - Train Epoch: 2 [41600/60900 (68%)] Loss: 0.000069
+[2025-01-30 18:23:24,928][trainer][INFO] - Train Epoch: 2 [44800/60900 (74%)] Loss: 0.002929
+[2025-01-30 18:24:04,095][trainer][INFO] - Train Epoch: 2 [48000/60900 (79%)] Loss: 0.000087
+[2025-01-30 18:24:42,999][trainer][INFO] - Train Epoch: 2 [51200/60900 (84%)] Loss: 0.000339
+[2025-01-30 18:25:21,706][trainer][INFO] - Train Epoch: 2 [54400/60900 (89%)] Loss: 0.000019
+[2025-01-30 18:26:03,289][trainer][INFO] - Train Epoch: 2 [57600/60900 (95%)] Loss: 0.000130
+[2025-01-30 18:26:44,215][trainer][INFO] - Train Epoch: 2 [60800/60900 (100%)] Loss: 0.000012
+[2025-01-30 18:27:34,434][trainer][INFO] - ===========================================================================================================
+[2025-01-30 18:27:34,445][trainer][INFO] - 
+             loss            accuracy           precision              recall                  f1        
+            train     valid     train     valid     train     valid     train     valid     train   valid
+epoch-2  0.013406  0.002653  0.998437  0.999387       1.0  0.999834  0.998437  0.999387  0.999062  0.9995
+[2025-01-30 18:27:34,445][trainer][INFO] - ===========================================================================================================
+[2025-01-30 18:27:34,463][trainer][INFO] - Model checkpoint saved at: 
+    ./ckpt/checkpoint-epoch2.pth
+[2025-01-30 18:27:34,483][trainer][INFO] - Renewing best checkpoint: 
+    .../ckpt/model_best.pth
+[2025-01-30 18:27:34,484][trainer][INFO] - ***********************************************************************************************************
+[2025-01-30 18:27:35,397][trainer][INFO] - Train Epoch: 3 [0/60900 (0%)] Loss: 0.001278
+[2025-01-30 18:28:14,218][trainer][INFO] - Train Epoch: 3 [3200/60900 (5%)] Loss: 0.000417
+[2025-01-30 18:28:53,066][trainer][INFO] - Train Epoch: 3 [6400/60900 (11%)] Loss: 0.000044
+[2025-01-30 18:29:31,705][trainer][INFO] - Train Epoch: 3 [9600/60900 (16%)] Loss: 0.000104
+[2025-01-30 18:30:10,648][trainer][INFO] - Train Epoch: 3 [12800/60900 (21%)] Loss: 0.000249
+[2025-01-30 18:30:49,366][trainer][INFO] - Train Epoch: 3 [16000/60900 (26%)] Loss: 0.000010
+[2025-01-30 18:31:27,898][trainer][INFO] - Train Epoch: 3 [19200/60900 (32%)] Loss: 0.000017
+[2025-01-30 18:32:06,752][trainer][INFO] - Train Epoch: 3 [22400/60900 (37%)] Loss: 0.000019
+[2025-01-30 18:32:45,517][trainer][INFO] - Train Epoch: 3 [25600/60900 (42%)] Loss: 0.000020
+[2025-01-30 18:33:24,198][trainer][INFO] - Train Epoch: 3 [28800/60900 (47%)] Loss: 0.000429
+[2025-01-30 18:34:02,909][trainer][INFO] - Train Epoch: 3 [32000/60900 (53%)] Loss: 0.000201
+[2025-01-30 18:34:42,108][trainer][INFO] - Train Epoch: 3 [35200/60900 (58%)] Loss: 0.000354
+[2025-01-30 18:35:21,082][trainer][INFO] - Train Epoch: 3 [38400/60900 (63%)] Loss: 0.001559
+[2025-01-30 18:36:01,037][trainer][INFO] - Train Epoch: 3 [41600/60900 (68%)] Loss: 0.001082
+[2025-01-30 18:36:40,201][trainer][INFO] - Train Epoch: 3 [44800/60900 (74%)] Loss: 0.000487
+[2025-01-30 18:37:19,781][trainer][INFO] - Train Epoch: 3 [48000/60900 (79%)] Loss: 0.000048
+[2025-01-30 18:38:01,247][trainer][INFO] - Train Epoch: 3 [51200/60900 (84%)] Loss: 0.000204
+[2025-01-30 18:38:41,027][trainer][INFO] - Train Epoch: 3 [54400/60900 (89%)] Loss: 0.000162
+[2025-01-30 18:39:21,914][trainer][INFO] - Train Epoch: 3 [57600/60900 (95%)] Loss: 0.000214
+[2025-01-30 18:40:06,919][trainer][INFO] - Train Epoch: 3 [60800/60900 (100%)] Loss: 0.000254
+[2025-01-30 18:40:57,859][trainer][INFO] - ===========================================================================================================
+[2025-01-30 18:40:57,866][trainer][INFO] - 
+             loss           accuracy          precision           recall             f1          
+            train     valid    train    valid     train     valid  train    valid train     valid
+epoch-3  0.008624  0.001125      1.0  0.99977       1.0  0.999885    1.0  0.99977   1.0  0.999724
+[2025-01-30 18:40:57,867][trainer][INFO] - ===========================================================================================================
+[2025-01-30 18:40:57,885][trainer][INFO] - Model checkpoint saved at: 
+    ./ckpt/checkpoint-epoch3.pth
+[2025-01-30 18:40:57,911][trainer][INFO] - Renewing best checkpoint: 
+    .../ckpt/model_best.pth
+[2025-01-30 18:40:57,913][trainer][INFO] - ***********************************************************************************************************
+[2025-01-30 18:40:58,903][trainer][INFO] - Train Epoch: 4 [0/60900 (0%)] Loss: 0.000011
+[2025-01-30 18:41:38,885][trainer][INFO] - Train Epoch: 4 [3200/60900 (5%)] Loss: 0.000492
+[2025-01-30 18:42:18,633][trainer][INFO] - Train Epoch: 4 [6400/60900 (11%)] Loss: 0.000027
+[2025-01-30 18:43:00,453][trainer][INFO] - Train Epoch: 4 [9600/60900 (16%)] Loss: 0.000228
+[2025-01-30 18:43:42,993][trainer][INFO] - Train Epoch: 4 [12800/60900 (21%)] Loss: 0.000011
+[2025-01-30 18:44:22,940][trainer][INFO] - Train Epoch: 4 [16000/60900 (26%)] Loss: 0.017760
+[2025-01-30 18:45:04,929][trainer][INFO] - Train Epoch: 4 [19200/60900 (32%)] Loss: 0.024772
+[2025-01-30 18:45:48,043][trainer][INFO] - Train Epoch: 4 [22400/60900 (37%)] Loss: 0.000446
+[2025-01-30 18:46:30,505][trainer][INFO] - Train Epoch: 4 [25600/60900 (42%)] Loss: 0.000005
+[2025-01-30 18:47:09,911][trainer][INFO] - Train Epoch: 4 [28800/60900 (47%)] Loss: 0.000001
+[2025-01-30 18:47:53,456][trainer][INFO] - Train Epoch: 4 [32000/60900 (53%)] Loss: 0.000005
+[2025-01-30 18:48:37,852][trainer][INFO] - Train Epoch: 4 [35200/60900 (58%)] Loss: 0.000384
+[2025-01-30 18:49:23,749][trainer][INFO] - Train Epoch: 4 [38400/60900 (63%)] Loss: 0.000186
+[2025-01-30 18:50:10,741][trainer][INFO] - Train Epoch: 4 [41600/60900 (68%)] Loss: 0.000021
+[2025-01-30 18:50:56,969][trainer][INFO] - Train Epoch: 4 [44800/60900 (74%)] Loss: 0.000014
+[2025-01-30 18:51:42,415][trainer][INFO] - Train Epoch: 4 [48000/60900 (79%)] Loss: 0.035802
+[2025-01-30 18:52:29,204][trainer][INFO] - Train Epoch: 4 [51200/60900 (84%)] Loss: 0.000006
+[2025-01-30 18:53:13,454][trainer][INFO] - Train Epoch: 4 [54400/60900 (89%)] Loss: 0.000026
+[2025-01-30 18:53:57,192][trainer][INFO] - Train Epoch: 4 [57600/60900 (95%)] Loss: 0.000005
+[2025-01-30 18:54:41,492][trainer][INFO] - Train Epoch: 4 [60800/60900 (100%)] Loss: 0.000023
+[2025-01-30 18:55:36,211][trainer][INFO] - ===========================================================================================================
+[2025-01-30 18:55:36,222][trainer][INFO] - 
+             loss            accuracy          precision              recall                 f1          
+            train     valid     train    valid     train     valid     train    valid     train     valid
+epoch-4  0.002146  0.001463  0.996875  0.99954       1.0  0.999834  0.996875  0.99954  0.998106  0.999571
+[2025-01-30 18:55:36,223][trainer][INFO] - ===========================================================================================================
+[2025-01-30 18:55:36,240][trainer][INFO] - Model checkpoint saved at: 
+    ./ckpt/checkpoint-epoch4.pth
+[2025-01-30 18:55:36,260][trainer][INFO] - ***********************************************************************************************************
+[2025-01-30 18:55:37,200][trainer][INFO] - Train Epoch: 5 [0/60900 (0%)] Loss: 0.000809
+[2025-01-30 18:56:20,877][trainer][INFO] - Train Epoch: 5 [3200/60900 (5%)] Loss: 0.000847
+[2025-01-30 18:57:02,407][trainer][INFO] - Train Epoch: 5 [6400/60900 (11%)] Loss: 0.000012
+[2025-01-30 18:57:42,924][trainer][INFO] - Train Epoch: 5 [9600/60900 (16%)] Loss: 0.000020
+[2025-01-30 18:58:22,555][trainer][INFO] - Train Epoch: 5 [12800/60900 (21%)] Loss: 0.000034
+[2025-01-30 18:59:05,753][trainer][INFO] - Train Epoch: 5 [16000/60900 (26%)] Loss: 0.000087
+[2025-01-30 18:59:47,686][trainer][INFO] - Train Epoch: 5 [19200/60900 (32%)] Loss: 0.000002
+[2025-01-30 19:00:28,908][trainer][INFO] - Train Epoch: 5 [22400/60900 (37%)] Loss: 0.000003
+[2025-01-30 19:01:11,913][trainer][INFO] - Train Epoch: 5 [25600/60900 (42%)] Loss: 0.000128
+[2025-01-30 19:01:51,494][trainer][INFO] - Train Epoch: 5 [28800/60900 (47%)] Loss: 0.000264
+[2025-01-30 19:02:31,358][trainer][INFO] - Train Epoch: 5 [32000/60900 (53%)] Loss: 0.000008
+[2025-01-30 19:03:11,192][trainer][INFO] - Train Epoch: 5 [35200/60900 (58%)] Loss: 0.000053
+[2025-01-30 19:03:50,775][trainer][INFO] - Train Epoch: 5 [38400/60900 (63%)] Loss: 0.000021
+[2025-01-30 19:04:30,428][trainer][INFO] - Train Epoch: 5 [41600/60900 (68%)] Loss: 0.000006
+[2025-01-30 19:05:12,334][trainer][INFO] - Train Epoch: 5 [44800/60900 (74%)] Loss: 0.000184
+[2025-01-30 19:05:52,490][trainer][INFO] - Train Epoch: 5 [48000/60900 (79%)] Loss: 0.000011
+[2025-01-30 19:06:31,948][trainer][INFO] - Train Epoch: 5 [51200/60900 (84%)] Loss: 0.000007
+[2025-01-30 19:07:11,781][trainer][INFO] - Train Epoch: 5 [54400/60900 (89%)] Loss: 0.000027
+[2025-01-30 19:07:52,484][trainer][INFO] - Train Epoch: 5 [57600/60900 (95%)] Loss: 0.000030
+[2025-01-30 19:08:34,987][trainer][INFO] - Train Epoch: 5 [60800/60900 (100%)] Loss: 0.000279
+[2025-01-30 19:09:22,354][trainer][INFO] - ===========================================================================================================
+[2025-01-30 19:09:22,362][trainer][INFO] - 
+             loss           accuracy           precision           recall              f1          
+            train     valid    train     valid     train     valid  train     valid train     valid
+epoch-5  0.001414  0.000246      1.0  0.999923       1.0  0.999949    1.0  0.999923   1.0  0.999893
+[2025-01-30 19:09:22,362][trainer][INFO] - ===========================================================================================================
+[2025-01-30 19:09:22,382][trainer][INFO] - Model checkpoint saved at: 
+    ./ckpt/checkpoint-epoch5.pth
+[2025-01-30 19:09:22,405][trainer][INFO] - Renewing best checkpoint: 
+    .../ckpt/model_best.pth
+[2025-01-30 19:09:22,408][trainer][INFO] - ***********************************************************************************************************
+[2025-01-30 19:09:23,257][trainer][INFO] - Train Epoch: 6 [0/60900 (0%)] Loss: 0.000006
+[2025-01-30 19:10:03,226][trainer][INFO] - Train Epoch: 6 [3200/60900 (5%)] Loss: 0.000002
+[2025-01-30 19:10:42,956][trainer][INFO] - Train Epoch: 6 [6400/60900 (11%)] Loss: 0.000009
+[2025-01-30 19:11:24,573][trainer][INFO] - Train Epoch: 6 [9600/60900 (16%)] Loss: 0.000006
+[2025-01-30 19:12:05,261][trainer][INFO] - Train Epoch: 6 [12800/60900 (21%)] Loss: 0.000011
+[2025-01-30 19:12:44,690][trainer][INFO] - Train Epoch: 6 [16000/60900 (26%)] Loss: 0.000001
+[2025-01-30 19:13:24,130][trainer][INFO] - Train Epoch: 6 [19200/60900 (32%)] Loss: 0.000001
+[2025-01-30 19:14:04,093][trainer][INFO] - Train Epoch: 6 [22400/60900 (37%)] Loss: 0.000013
+[2025-01-30 19:14:43,523][trainer][INFO] - Train Epoch: 6 [25600/60900 (42%)] Loss: 0.000004
+[2025-01-30 19:15:22,803][trainer][INFO] - Train Epoch: 6 [28800/60900 (47%)] Loss: 0.000013
+[2025-01-30 19:16:02,079][trainer][INFO] - Train Epoch: 6 [32000/60900 (53%)] Loss: 0.000001
+[2025-01-30 19:16:40,837][trainer][INFO] - Train Epoch: 6 [35200/60900 (58%)] Loss: 0.000001
+[2025-01-30 19:17:20,018][trainer][INFO] - Train Epoch: 6 [38400/60900 (63%)] Loss: 0.001014
+[2025-01-30 19:17:59,727][trainer][INFO] - Train Epoch: 6 [41600/60900 (68%)] Loss: 0.000002
+[2025-01-30 19:18:40,537][trainer][INFO] - Train Epoch: 6 [44800/60900 (74%)] Loss: 0.000001
+[2025-01-30 19:19:21,565][trainer][INFO] - Train Epoch: 6 [48000/60900 (79%)] Loss: 0.000020
+[2025-01-30 19:20:00,951][trainer][INFO] - Train Epoch: 6 [51200/60900 (84%)] Loss: 0.000001
+[2025-01-30 19:20:40,136][trainer][INFO] - Train Epoch: 6 [54400/60900 (89%)] Loss: 0.000001
+[2025-01-30 19:21:20,209][trainer][INFO] - Train Epoch: 6 [57600/60900 (95%)] Loss: 0.000000
+[2025-01-30 19:21:59,537][trainer][INFO] - Train Epoch: 6 [60800/60900 (100%)] Loss: 0.000024
+[2025-01-30 19:22:46,736][trainer][INFO] - ===========================================================================================================
+[2025-01-30 19:22:46,743][trainer][INFO] - 
+            loss           accuracy           precision           recall              f1          
+           train     valid    train     valid     train     valid  train     valid train     valid
+epoch-6  0.00045  0.000131      1.0  0.999923       1.0  0.999962    1.0  0.999923   1.0  0.999929
+[2025-01-30 19:22:46,744][trainer][INFO] - ===========================================================================================================
+[2025-01-30 19:22:46,760][trainer][INFO] - Model checkpoint saved at: 
+    ./ckpt/checkpoint-epoch6.pth
+[2025-01-30 19:22:46,783][trainer][INFO] - Renewing best checkpoint: 
+    .../ckpt/model_best.pth
+[2025-01-30 19:22:46,785][trainer][INFO] - ***********************************************************************************************************
+[2025-01-30 19:22:47,692][trainer][INFO] - Train Epoch: 7 [0/60900 (0%)] Loss: 0.000001
+[2025-01-30 19:23:27,667][trainer][INFO] - Train Epoch: 7 [3200/60900 (5%)] Loss: 0.000004
+[2025-01-30 19:24:06,997][trainer][INFO] - Train Epoch: 7 [6400/60900 (11%)] Loss: 0.000001
+[2025-01-30 19:24:46,044][trainer][INFO] - Train Epoch: 7 [9600/60900 (16%)] Loss: 0.000001
+[2025-01-30 19:25:25,044][trainer][INFO] - Train Epoch: 7 [12800/60900 (21%)] Loss: 0.000005
+[2025-01-30 19:26:04,263][trainer][INFO] - Train Epoch: 7 [16000/60900 (26%)] Loss: 0.000016
+[2025-01-30 19:26:43,902][trainer][INFO] - Train Epoch: 7 [19200/60900 (32%)] Loss: 0.000000
+[2025-01-30 19:27:24,852][trainer][INFO] - Train Epoch: 7 [22400/60900 (37%)] Loss: 0.000001
+[2025-01-30 19:28:04,901][trainer][INFO] - Train Epoch: 7 [25600/60900 (42%)] Loss: 0.000006
+[2025-01-30 19:28:45,510][trainer][INFO] - Train Epoch: 7 [28800/60900 (47%)] Loss: 0.000031
+[2025-01-30 19:29:28,264][trainer][INFO] - Train Epoch: 7 [32000/60900 (53%)] Loss: 0.000004
+[2025-01-30 19:30:13,923][trainer][INFO] - Train Epoch: 7 [35200/60900 (58%)] Loss: 0.000001
+[2025-01-30 19:30:53,215][trainer][INFO] - Train Epoch: 7 [38400/60900 (63%)] Loss: 0.000051
+[2025-01-30 19:31:32,249][trainer][INFO] - Train Epoch: 7 [41600/60900 (68%)] Loss: 0.000110
+[2025-01-30 19:32:11,695][trainer][INFO] - Train Epoch: 7 [44800/60900 (74%)] Loss: 0.000058
+[2025-01-30 19:32:50,980][trainer][INFO] - Train Epoch: 7 [48000/60900 (79%)] Loss: 0.000010
+[2025-01-30 19:33:29,960][trainer][INFO] - Train Epoch: 7 [51200/60900 (84%)] Loss: 0.000004
+[2025-01-30 19:34:10,302][trainer][INFO] - Train Epoch: 7 [54400/60900 (89%)] Loss: 0.000002
+[2025-01-30 19:34:50,360][trainer][INFO] - Train Epoch: 7 [57600/60900 (95%)] Loss: 0.000056
+[2025-01-30 19:35:31,979][trainer][INFO] - Train Epoch: 7 [60800/60900 (100%)] Loss: 0.000056
+[2025-01-30 19:36:20,432][trainer][INFO] - ===========================================================================================================
+[2025-01-30 19:36:20,440][trainer][INFO] - 
+             loss           accuracy           precision       recall              f1          
+            train     valid    train     valid     train valid  train     valid train     valid
+epoch-7  0.000106  0.000215      1.0  0.999923       1.0   1.0    1.0  0.999923   1.0  0.999954
+[2025-01-30 19:36:20,440][trainer][INFO] - ===========================================================================================================
+[2025-01-30 19:36:20,458][trainer][INFO] - Model checkpoint saved at: 
+    ./ckpt/checkpoint-epoch7.pth
+[2025-01-30 19:36:20,473][trainer][INFO] - ***********************************************************************************************************
+[2025-01-30 19:36:21,312][trainer][INFO] - Train Epoch: 8 [0/60900 (0%)] Loss: 0.000000
+[2025-01-30 19:37:00,846][trainer][INFO] - Train Epoch: 8 [3200/60900 (5%)] Loss: 0.000150
+[2025-01-30 19:37:40,061][trainer][INFO] - Train Epoch: 8 [6400/60900 (11%)] Loss: 0.000000
+[2025-01-30 19:38:18,879][trainer][INFO] - Train Epoch: 8 [9600/60900 (16%)] Loss: 0.000004
+[2025-01-30 19:38:58,143][trainer][INFO] - Train Epoch: 8 [12800/60900 (21%)] Loss: 0.000006
+[2025-01-30 19:39:36,805][trainer][INFO] - Train Epoch: 8 [16000/60900 (26%)] Loss: 0.000006
+[2025-01-30 19:40:15,882][trainer][INFO] - Train Epoch: 8 [19200/60900 (32%)] Loss: 0.000001
+[2025-01-30 19:40:54,813][trainer][INFO] - Train Epoch: 8 [22400/60900 (37%)] Loss: 0.001862
+[2025-01-30 19:41:33,549][trainer][INFO] - Train Epoch: 8 [25600/60900 (42%)] Loss: 0.000088
+[2025-01-30 19:42:12,345][trainer][INFO] - Train Epoch: 8 [28800/60900 (47%)] Loss: 0.000001
+[2025-01-30 19:42:51,095][trainer][INFO] - Train Epoch: 8 [32000/60900 (53%)] Loss: 0.000027
+[2025-01-30 19:43:29,772][trainer][INFO] - Train Epoch: 8 [35200/60900 (58%)] Loss: 0.000197
+[2025-01-30 19:44:08,537][trainer][INFO] - Train Epoch: 8 [38400/60900 (63%)] Loss: 0.000022
+[2025-01-30 19:44:47,363][trainer][INFO] - Train Epoch: 8 [41600/60900 (68%)] Loss: 0.000010
+[2025-01-30 19:45:26,121][trainer][INFO] - Train Epoch: 8 [44800/60900 (74%)] Loss: 0.000907
+[2025-01-30 19:46:04,659][trainer][INFO] - Train Epoch: 8 [48000/60900 (79%)] Loss: 0.000242
+[2025-01-30 19:46:43,385][trainer][INFO] - Train Epoch: 8 [51200/60900 (84%)] Loss: 0.000010
+[2025-01-30 19:47:21,946][trainer][INFO] - Train Epoch: 8 [54400/60900 (89%)] Loss: 0.000041
+[2025-01-30 19:48:00,430][trainer][INFO] - Train Epoch: 8 [57600/60900 (95%)] Loss: 0.000009
+[2025-01-30 19:48:39,291][trainer][INFO] - Train Epoch: 8 [60800/60900 (100%)] Loss: 0.000000
+[2025-01-30 19:49:26,026][trainer][INFO] - ===========================================================================================================
+[2025-01-30 19:49:26,034][trainer][INFO] - 
+             loss           accuracy          precision           recall             f1          
+            train     valid    train    valid     train     valid  train    valid train     valid
+epoch-8  0.000546  0.001281      1.0  0.99977       1.0  0.999923    1.0  0.99977   1.0  0.999775
+[2025-01-30 19:49:26,034][trainer][INFO] - ===========================================================================================================
+[2025-01-30 19:49:26,051][trainer][INFO] - Model checkpoint saved at: 
+    ./ckpt/checkpoint-epoch8.pth
+[2025-01-30 19:49:26,067][trainer][INFO] - ***********************************************************************************************************
+[2025-01-30 19:49:26,918][trainer][INFO] - Train Epoch: 9 [0/60900 (0%)] Loss: 0.000032
+[2025-01-30 19:50:05,801][trainer][INFO] - Train Epoch: 9 [3200/60900 (5%)] Loss: 0.000001
+[2025-01-30 19:50:44,984][trainer][INFO] - Train Epoch: 9 [6400/60900 (11%)] Loss: 0.000001
+[2025-01-30 19:51:24,048][trainer][INFO] - Train Epoch: 9 [9600/60900 (16%)] Loss: 0.000000
+[2025-01-30 19:52:02,962][trainer][INFO] - Train Epoch: 9 [12800/60900 (21%)] Loss: 0.000015
+[2025-01-30 19:52:42,338][trainer][INFO] - Train Epoch: 9 [16000/60900 (26%)] Loss: 0.000002
+[2025-01-30 19:53:21,812][trainer][INFO] - Train Epoch: 9 [19200/60900 (32%)] Loss: 0.000027
+[2025-01-30 19:54:00,708][trainer][INFO] - Train Epoch: 9 [22400/60900 (37%)] Loss: 0.000004
+[2025-01-30 19:54:39,541][trainer][INFO] - Train Epoch: 9 [25600/60900 (42%)] Loss: 0.000048
+[2025-01-30 19:55:18,474][trainer][INFO] - Train Epoch: 9 [28800/60900 (47%)] Loss: 0.000000
+[2025-01-30 19:55:58,355][trainer][INFO] - Train Epoch: 9 [32000/60900 (53%)] Loss: 0.000233
+[2025-01-30 19:56:38,413][trainer][INFO] - Train Epoch: 9 [35200/60900 (58%)] Loss: 0.000024
+[2025-01-30 19:57:21,700][trainer][INFO] - Train Epoch: 9 [38400/60900 (63%)] Loss: 0.000082
+[2025-01-30 19:58:04,111][trainer][INFO] - Train Epoch: 9 [41600/60900 (68%)] Loss: 0.000004
+[2025-01-30 19:58:45,894][trainer][INFO] - Train Epoch: 9 [44800/60900 (74%)] Loss: 0.000003
+[2025-01-30 19:59:26,701][trainer][INFO] - Train Epoch: 9 [48000/60900 (79%)] Loss: 0.000000
+[2025-01-30 20:00:06,471][trainer][INFO] - Train Epoch: 9 [51200/60900 (84%)] Loss: 0.000001
+[2025-01-30 20:00:46,962][trainer][INFO] - Train Epoch: 9 [54400/60900 (89%)] Loss: 0.000001
+[2025-01-30 20:01:27,940][trainer][INFO] - Train Epoch: 9 [57600/60900 (95%)] Loss: 0.000001
+[2025-01-30 20:02:09,148][trainer][INFO] - Train Epoch: 9 [60800/60900 (100%)] Loss: 0.000063
+[2025-01-30 20:02:58,436][trainer][INFO] - ===========================================================================================================
+[2025-01-30 20:02:58,443][trainer][INFO] - 
+             loss           accuracy           precision       recall              f1          
+            train     valid    train     valid     train valid  train     valid train     valid
+epoch-9  0.001013  0.000304      1.0  0.999923       1.0   1.0    1.0  0.999923   1.0  0.999954
+[2025-01-30 20:02:58,443][trainer][INFO] - ===========================================================================================================
+[2025-01-30 20:02:58,459][trainer][INFO] - Model checkpoint saved at: 
+    ./ckpt/checkpoint-epoch9.pth
+[2025-01-30 20:02:58,474][trainer][INFO] - ***********************************************************************************************************
+[2025-01-30 20:02:59,329][trainer][INFO] - Train Epoch: 10 [0/60900 (0%)] Loss: 0.000001
+[2025-01-30 20:03:40,190][trainer][INFO] - Train Epoch: 10 [3200/60900 (5%)] Loss: 0.000025
+[2025-01-30 20:04:21,021][trainer][INFO] - Train Epoch: 10 [6400/60900 (11%)] Loss: 0.000011
+[2025-01-30 20:05:01,955][trainer][INFO] - Train Epoch: 10 [9600/60900 (16%)] Loss: 0.000006
+[2025-01-30 20:05:43,494][trainer][INFO] - Train Epoch: 10 [12800/60900 (21%)] Loss: 0.000001
+[2025-01-30 20:06:24,928][trainer][INFO] - Train Epoch: 10 [16000/60900 (26%)] Loss: 0.000001
+[2025-01-30 20:07:06,321][trainer][INFO] - Train Epoch: 10 [19200/60900 (32%)] Loss: 0.000106
+[2025-01-30 20:07:47,687][trainer][INFO] - Train Epoch: 10 [22400/60900 (37%)] Loss: 0.000249
+[2025-01-30 20:08:28,919][trainer][INFO] - Train Epoch: 10 [25600/60900 (42%)] Loss: 0.000016
+[2025-01-30 20:09:10,439][trainer][INFO] - Train Epoch: 10 [28800/60900 (47%)] Loss: 0.000085
+[2025-01-30 20:09:51,727][trainer][INFO] - Train Epoch: 10 [32000/60900 (53%)] Loss: 0.000009
+[2025-01-30 20:10:33,494][trainer][INFO] - Train Epoch: 10 [35200/60900 (58%)] Loss: 0.000002
+[2025-01-30 20:11:15,230][trainer][INFO] - Train Epoch: 10 [38400/60900 (63%)] Loss: 0.000069
+[2025-01-30 20:11:56,251][trainer][INFO] - Train Epoch: 10 [41600/60900 (68%)] Loss: 0.000006
+[2025-01-30 20:12:37,074][trainer][INFO] - Train Epoch: 10 [44800/60900 (74%)] Loss: 0.000008
+[2025-01-30 20:13:18,213][trainer][INFO] - Train Epoch: 10 [48000/60900 (79%)] Loss: 0.000003
+[2025-01-30 20:13:59,350][trainer][INFO] - Train Epoch: 10 [51200/60900 (84%)] Loss: 0.000006
+[2025-01-30 20:14:39,321][trainer][INFO] - Train Epoch: 10 [54400/60900 (89%)] Loss: 0.000000
+[2025-01-30 20:15:18,244][trainer][INFO] - Train Epoch: 10 [57600/60900 (95%)] Loss: 0.000000
+[2025-01-30 20:15:56,855][trainer][INFO] - Train Epoch: 10 [60800/60900 (100%)] Loss: 0.000001
+[2025-01-30 20:16:43,579][trainer][INFO] - ============================================================================================================
+[2025-01-30 20:16:43,586][trainer][INFO] - 
+              loss           accuracy          precision           recall             f1         
+             train     valid    train    valid     train     valid  train    valid train    valid
+epoch-10  0.001305  0.000953      1.0  0.99977       1.0  0.999911    1.0  0.99977   1.0  0.99977
+[2025-01-30 20:16:43,586][trainer][INFO] - ============================================================================================================
+[2025-01-30 20:16:43,605][trainer][INFO] - Model checkpoint saved at: 
+    ./ckpt/checkpoint-epoch10.pth
+[2025-01-30 20:16:43,617][trainer][INFO] - ************************************************************************************************************
