@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from typing import List
 
@@ -20,8 +21,9 @@ class SignDataset(Dataset):
     def __init__(self, paths: List[Path], transform=None):
         self.paths = paths
         self.transform = transform # если есть аугментации
-
         labels = sorted(set(str(x).split('/')[-2] for x in paths))
+        # labels = sorted(set(str(x).split(os.sep)[-2] for x in paths))
+        # labels = sorted(set(x.parent.name for x in paths))
         self.one_hot_encoding = {label: i for i, label in enumerate(labels)}
 
     def __len__(self):
