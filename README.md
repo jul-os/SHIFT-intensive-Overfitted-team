@@ -1,4 +1,4 @@
-FORK THIS REPO
+FORK/BRANCH THIS REPO
 
 # SHIFT train project
 Этот проект - бейзлайн для обучения модели классификации, ваша задача - улучшить его.
