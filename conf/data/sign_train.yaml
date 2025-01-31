@@ -1,8 +1,8 @@
 # @package _global_
 data_loader:
   _target_: srcs.data_loader.data_loaders.get_sign_dataloader
-  path_train: /content/drive/MyDrive/data/train/
-  path_val: /content/drive/MyDrive/data/validation/
+  path_train: /content/drive/MyDrive/Shared with me/data/train/
+  path_val: /content/drive/MyDrive/Shared with me/data/validation/
   batch_size: ${batch_size}
   shuffle: true
   num_workers: ${n_cpu}
