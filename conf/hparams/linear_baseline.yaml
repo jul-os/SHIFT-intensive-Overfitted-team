@@ -1,5 +1,5 @@
 # @package _global_
-n_cpu: 8
+n_cpu: 2
 batch_size: 32
 learning_rate: 0.001
 weight_decay: 0
