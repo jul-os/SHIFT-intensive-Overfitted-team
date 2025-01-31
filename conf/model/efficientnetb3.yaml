@@ -1,5 +1,5 @@
 # @package _global_
-name: MobilenetV3Small
+name: EfficientNetb3
 arch:
   _target_: srcs.model.model.get_efficentnet_b3_model
   num_classes: 29

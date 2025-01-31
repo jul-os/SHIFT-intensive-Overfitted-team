@@ -37,7 +37,7 @@ class ImageClassifier:
         self.model_.eval().to(self.device_)
 
     def _preprocess(self, img):
-        img = cv2.resize(img, (200, 200))
+        img = cv2.resize(img, (300, 300))
         img = np.transpose(img, (2, 0, 1))
         return torch.tensor(img).float().to(self.device_)
 

@@ -10,14 +10,14 @@ metrics:
 - _target_: srcs.model.metric.f1
 data_loader:
   _target_: srcs.data_loader.data_loaders.get_sign_dataloader
-  path_train: /home/julia/Desktop/code/overfitted/SHIFT-intensive-Overfitted-team/data/asl_alphabet_train
+  path_train: /home/julia/Desktop/code/overfitted/SHIFT-intensive-Overfitted-team/data/train
   path_val: /home/julia/Desktop/code/overfitted/SHIFT-intensive-Overfitted-team/data/validation
   batch_size: ${batch_size}
   shuffle: true
   num_workers: ${n_cpu}
-name: MobilenetV3Small
+name: EfficientNetb3
 arch:
-  _target_: srcs.model.model.get_mobilenet_model
+  _target_: srcs.model.model.get_efficentnet_b3_model
   num_classes: 29
 loss:
   _target_: srcs.model.loss.focal_loss
@@ -31,7 +31,7 @@ lr_scheduler:
   step_size: ${scheduler_step_size}
   gamma: ${scheduler_gamma}
 n_cpu: 8
-batch_size: 32
+batch_size: 16
 learning_rate: 0.001
 weight_decay: 0
 scheduler_step_size: 50
