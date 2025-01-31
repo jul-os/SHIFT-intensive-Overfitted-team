@@ -1,6 +1,11 @@
-import torchvision.models as models
-import torch
+import logging
+import os
+from typing import List
+
+import cv2
 import numpy as np
+import torch
+import torchvision
 
 
 def get_resnet_18_model(num_classes: int = 29, pretrained: bool = True):
