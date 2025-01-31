@@ -1,6 +1,6 @@
 # @package _global_
 data_loader:
   _target_: srcs.data_loader.data_loaders.get_sign_test_dataloader
-  path_test: /content/drive/MyDrive/data/test
+  path_test: /content/drive/MyDrive/Shared with me/data/test
   batch_size: ${batch_size}
   num_workers: ${n_cpu}
