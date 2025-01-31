@@ -5,6 +5,28 @@ import cv2
 import numpy as np
 import torch
 from torch.utils.data import DataLoader, Dataset
+from torchvision import transforms
+
+def pad_to_square(img):
+    width, height = img.size
+    max_size_of_pic = max(width, height)
+
+    pad_left = (max_size_of_pic - width)//2
+    pad_top = (max_size_of_pic - height)//2
+    pad_right = max_size_of_pic - width - pad_left
+    pad_bottom = max_size_of_pic - height - pad_top
+
+    return transforms.Pad((pad_left, pad_top, pad_right, pad_bottom), fill=0)(img)
+
+# augmentation with pad
+transform = transforms.Compose([
+    transforms.ColorJitter(brightness=0.3, contrast=0.3,
+                           saturation=0.15, hue=(-0.1, 0.1)),
+    transforms.RandomPerspective(distortion_scale=0.2, p=0.3),
+    transforms.GaussianBlur(kernel_size=(5, 5), sigma=(0.1, 2.0)),
+    transforms.Lambda(pad_to_square),
+    transforms.Resize(200, interpolation=transforms.InterpolationMode.BICUBIC),
+    transforms.ToTensor()])
 
 
 class SignDataset(Dataset):
@@ -21,9 +43,14 @@ class SignDataset(Dataset):
     def __getitem__(self, idx):
         image = cv2.imread(str(self.paths[idx]))
         label = str(self.paths[idx]).split('/')[-2]
-        image = cv2.resize(image, (200, 200))
-        image = np.transpose(image, (2, 0, 1))
-
+        # image = cv2.resize(image, (200, 200))
+        # image = np.transpose(image, (2, 0, 1))
+        if self.transform is not None:
+            image = self.transform(image)
+            image = np.transpose(image, (2, 0, 1))
+        else:
+            image = cv2.resize(image, (200, 200))
+            image = np.transpose(image, (2, 0, 1))
         return torch.tensor(image).float(), torch.tensor(self.one_hot_encoding[label])
 
 
