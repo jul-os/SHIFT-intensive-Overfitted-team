@@ -21,7 +21,7 @@ class SignDataset(Dataset):
     def __getitem__(self, idx):
         image = cv2.imread(str(self.paths[idx]))
         label = str(self.paths[idx]).split('/')[-2]
-        image = cv2.resize(image, (200, 200))
+        image = cv2.resize(image, (224, 224))
         image = np.transpose(image, (2, 0, 1))
 
         return torch.tensor(image).float(), torch.tensor(self.one_hot_encoding[label])
