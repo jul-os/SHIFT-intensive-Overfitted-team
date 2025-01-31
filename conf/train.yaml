@@ -1,8 +1,8 @@
 resume: #ckpt/model_best.pth
 save_dir: ckpt/
 log_dir: tensorboard/
-gpu: false
-n_gpu: 0
+gpu: true
+n_gpu: 1
 metrics:
   - _target_: srcs.model.metric.accuracy
   - _target_: srcs.model.metric.precision
