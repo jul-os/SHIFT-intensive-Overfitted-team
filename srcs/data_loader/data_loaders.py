@@ -11,9 +11,10 @@ from torchvision import transforms
 
 #аугментации
 transform = transforms.Compose([
-    transforms.ColorJitter(brightness=0.15, contrast=0.15,
-                            saturation=0.15, hue=(-0.1, 0.1)),
-                            transforms.RandomRotation(15),
+                            transforms.ColorJitter(brightness=0.3, contrast=0.3,
+                                                   saturation=0.15, hue=(-0.1, 0.1)),
+                            transforms.RandomPerspective(distortion_scale=0.2, p=0.3),
+                            transforms.GaussianBlur(kernel_size=(5, 5), sigma=(0.1, 2.0)),
                             transforms.Resize((200, 200)),
                             transforms.ToTensor()])
 
