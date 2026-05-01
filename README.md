@@ -2,6 +2,8 @@ FORK/BRANCH THIS REPO
 
 ![image](https://github.com/user-attachments/assets/63bbdc0a-bb55-4397-b4cc-30897d037d72)
 
+## Наше решение
+Использована модель mobilenet_v3_small
 
 ## Окружение
 Для начала склонируйте проект и настройте окружение
@@ -27,12 +29,3 @@ python3 train.py
 tensorboard --logdir=tensorboard
 ```
 После этого перейдите по адресу http://localhost:6006/, там вы увидите, как изменяются метрики (accuracy, f1, precision, recall)
-
-## С чего начать?
-Для начала просмотрите параметры конфигураций [configs](conf/).
-Так же внимательно изучите, как формируется [dataloader](srcs/data_loader/data_loaders.py)
-По умолчанию используется модель mobilenet_v3_small, попробуйте что-то лучше
-
-## Полезные ссылки
-- Туториалы по обучению на Pytorch - https://pytorch.org/tutorials/
-- Документация hydra - https://hydra.cc/docs/intro/
