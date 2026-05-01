@@ -3,9 +3,6 @@ FORK/BRANCH THIS REPO
 ![image](https://github.com/user-attachments/assets/63bbdc0a-bb55-4397-b4cc-30897d037d72)
 
 
-# SHIFT train project
-Этот проект - бейзлайн для обучения модели классификации, ваша задача - улучшить его.
-
 ## Окружение
 Для начала склонируйте проект и настройте окружение
 ```bash
